@@ -28,6 +28,7 @@ Here is a list of software you should have installed and configured before you b
     - [Instructions to install Windows Subsystem for Linux](#instructions-to-install-windows-subsystem-for-linux)
   - [Install some WSL Packages](#install-some-wsl-packages)
   - [Setup VSCode to Work With WSL](#setup-vscode-to-work-with-wsl)
+  - [Install zgen](#install-zgen)
   - [NodeJS](#nodejs)
     - [Instructions to install Node.js with NVM](#instructions-to-install-nodejs-with-nvm)
       - [Test your Node.js installation](#test-your-nodejs-installation)
@@ -229,7 +230,13 @@ Go to the extension store in VSCode and download the WSL extension. It should be
 
 This is extremely important, and will let you use VSCode with your WSL for Linux
 
-16.Install zgen
+That's it for this one 😃
+
+To test to see if it worked, go into your Ubuntu terminal and type in `which code`
+
+As long as it doesn't say `command not found "code"` or something like that, then you are good to go ✅
+
+## Install zgen
 
 Run this command to clone down the files for zgen
 
@@ -248,6 +255,11 @@ code ~/.zshrc
 Then you will copy and paste the following contents into the `.zshrc` configuration file and hit save
 
 ```zsh
+source "${HOME}/.zgen/zgen.zsh"
+
+zgen prezto
+prompt steeef
+
 # bun completions
 [ -s "/root/.bun/_bun" ] && source "/root/.bun/_bun"
 
